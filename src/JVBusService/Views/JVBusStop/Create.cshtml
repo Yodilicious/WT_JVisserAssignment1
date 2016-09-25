@@ -1,0 +1,39 @@
+﻿@model JVBusService.Models.BusStop
+
+@{
+    ViewBag.Title = "New Bus Stop";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-controller="JVBusStop" asp-action="Create" method="post" class="form-horizontal" role="form">
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <label asp-for="BusStopNumber" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="BusStopNumber" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Location" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Location" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="GoingDowntown" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="GoingDowntown" class="form-control" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>

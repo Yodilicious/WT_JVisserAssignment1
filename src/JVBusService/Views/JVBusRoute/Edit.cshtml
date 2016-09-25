@@ -1,0 +1,37 @@
+﻿@model JVBusService.Models.BusRoute
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-controller="JVBusRoute" asp-action="Edit" method="post" class="form-horizontal" role="form">
+    <div class="form-horizontal">
+        <h4>Bus Route @Model.BusRouteCode</h4>
+        <hr />
+        <div class="form-group">
+            <label asp-for="BusRouteCode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                @Html.DisplayFor(r => r.BusRouteCode)
+                <input type="hidden" asp-for="BusRouteCode" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RouteName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="RouteName" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

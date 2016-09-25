@@ -1,0 +1,32 @@
+﻿@model JVBusService.Models.BusRoute
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Delete Bus Route?</h2>
+
+<div class="form-horizontal">
+    <h4>Delete Bus Route @Model.BusRouteCode</h4>
+    <hr />
+    <div class="form-group">
+        <label asp-for="BusRouteCode" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            @Html.DisplayFor(r => r.BusRouteCode)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RouteName" class="col-md-2 control-label"></label>
+        <div class="col-md-10">
+            @Html.DisplayFor(r => r.RouteName)
+        </div>
+    </div>
+    <div>
+        <a asp-action="Delete" asp-route-id="@Model.BusRouteCode">Delete</a>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>

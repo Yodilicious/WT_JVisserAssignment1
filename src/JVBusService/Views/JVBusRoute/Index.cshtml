@@ -1,0 +1,41 @@
+﻿@model System.Collections.Generic.List<JVBusService.Models.BusRoute>
+
+@{
+    ViewBag.Title = "Bus Route Listing";
+}
+
+<h2>Bus Route Listing</h2>
+
+<p>
+    <a asp-controller="JVBusRoute" asp-action="Create">Create New</a>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            Bus Route Code
+        </th>
+        <th>
+            Route Name
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusRouteCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RouteName)
+            </td>
+            <td>
+                <a asp-controller="JVBusRoute" asp-action="Edit" asp-route-id="@item.BusRouteCode">Edit</a> |
+                <a asp-controller="JVBusRoute" asp-action="Details" asp-route-id="@item.BusRouteCode">Details</a> |
+                <a asp-controller="JVBusRoute" asp-action="DeleteConfirm" asp-route-id="@item.BusRouteCode">Delete</a>
+            </td>
+        </tr>
+    }
+
+</table>
